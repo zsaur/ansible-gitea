@@ -44,3 +44,10 @@
     mode: 0655
   notify:
     - "restart gitea"
+
+  # Create a new database with postgres
+- postgresql_db:
+    name: gitea
+    login_user: gitea
+    login_password: {{ postgres_gitea_pass }}
+    state: present
